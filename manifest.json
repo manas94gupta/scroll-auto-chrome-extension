@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Scroll Auto",
+  "description": "This extension lets you scroll webpages automatically at the desired speed with just one click.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "scrollAuto.html"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
