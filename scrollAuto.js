@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function clickHandler(e) {
-    chrome.runtime.sendMessage({directive: "scroll"}, function(response) {
+    var speed = document.getElementById('speed').value;
+    chrome.runtime.sendMessage({directive: "scroll", speed: speed}, function(response) {
         this.close(); // close the popup when the background finishes processing request
     });
 }

@@ -1,3 +1,4 @@
+console.log(speed);
 pageScroll();
 
 function pageScroll() {
