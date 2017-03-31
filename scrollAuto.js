@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function clickHandler(e) {
-    chrome.runtime.sendMessage({directive: "popup-click"}, function(response) {
+    chrome.runtime.sendMessage({directive: "scroll"}, function(response) {
         this.close(); // close the popup when the background finishes processing request
     });
 }

@@ -3,9 +3,53 @@
     <head>
         <title>Scroll Auto</title>
         <script src="scrollAuto.js"></script>
+        <style media="screen">
+            body {
+                margin: 0;
+            }
+
+            .heading     {
+                background-color: #00bbd6;
+                padding: 5px;
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+
+            .content {
+                /*margin-top: 2px;*/
+                text-align: center;
+                background-color: #00ffee;
+                padding: 10px 5px;
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+
+            #scroll {
+                margin-top: 10px;
+                border: 2px solid #00bbd6;
+                background: #00bbd6;
+                padding: 1px 10px;
+                color: #fff;
+                border-radius: 5px;
+                box-shadow: 0px 0px 2px #848484;
+                cursor: pointer;
+            }
+
+            #scroll:hover {
+                box-shadow: none;
+            }
+        </style>
     </head>
     <body>
-        <h4>Scroll Auto</h4>
-        <button id="scroll">Scroll</button>
+        <div class="heading">
+            Scroll Auto
+        </div>
+        <div class="content">
+            <input type="range" value="50">
+            <button id="scroll">Scroll</button>
+        </div>
     </body>
 </html>

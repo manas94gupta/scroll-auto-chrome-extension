@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         switch (request.directive) {
-        case "popup-click":
+        case "scroll":
             // execute the content script
             chrome.tabs.executeScript(null, { // defaults to the current tab
                 file: "pageScroll.js", // script to inject into page and run in sandbox
@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(
             break;
         default:
             // helps debug when request directive doesn't match
-            alert("Unmatched request of '" + request + "' from script to background.js from " + sender);
+            alert("Something went wrong, try again");
         }
     }
 );
