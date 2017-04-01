@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     var scroll = document.getElementById('scroll');
+    var speed = document.getElementById('speed');
     scroll.addEventListener('click', scrollHandler);
+    speed.addEventListener('change', scrollHandler);
 
     var stop = document.getElementById('stop');
     stop.addEventListener('click', stopHandler);
