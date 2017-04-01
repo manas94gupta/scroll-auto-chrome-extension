@@ -1,7 +1,6 @@
-pageScroll(speed);
+pageScroll(speed, dist);
 
 function pageScroll() {
-    console.log(speed);
-    window.scrollBy(0,1);
+    window.scrollBy(0,dist);
     scrolldelay = setTimeout(pageScroll,speed);
 }

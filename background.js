@@ -6,7 +6,21 @@ chrome.runtime.onMessage.addListener(
             // execute the content script
             chrome.tabs.executeScript(null, { // defaults to the current tab
                 // file: "pageScroll.js", // script to inject into page and run in sandbox
-                code: 'var speed = ' + JSON.stringify(speed),
+                code: 'var dist = 1, speed = ' + JSON.stringify(speed),
+                // allFrames: true // This injects script into iframes in the page and doesn't work before 4.0.266.0.
+            }, function() {
+                chrome.tabs.executeScript(null, {
+                    file: "pageScroll.js",
+                    allFrames: true
+                });
+            });
+            sendResponse({}); // sending back empty response to sender
+            break;
+        case "stop":
+            // execute the content script
+            chrome.tabs.executeScript(null, { // defaults to the current tab
+                // file: "pageScroll.js", // script to inject into page and run in sandbox
+                code: 'var dist = 0, speed = 0',
                 // allFrames: true // This injects script into iframes in the page and doesn't work before 4.0.266.0.
             }, function() {
                 chrome.tabs.executeScript(null, {

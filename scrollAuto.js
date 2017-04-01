@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.getElementById('scroll');
-    btn.addEventListener('click', clickHandler);
+    var scroll = document.getElementById('scroll');
+    scroll.addEventListener('click', scrollHandler);
+
+    var stop = document.getElementById('stop');
+    stop.addEventListener('click', stopHandler);
 });
 
-function clickHandler(e) {
+function scrollHandler(e) {
+    console.log('scroll');
     var speed = document.getElementById('speed').value;
     chrome.runtime.sendMessage({directive: "scroll", speed: speed}, function(response) {
+        this.close(); // close the popup when the background finishes processing request
+    });
+}
+
+function stopHandler(e) {
+    console.log('stop');
+    chrome.runtime.sendMessage({directive: "stop"}, function(response) {
         this.close(); // close the popup when the background finishes processing request
     });
 }
